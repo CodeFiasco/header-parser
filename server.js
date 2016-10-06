@@ -7,7 +7,7 @@ var app = express();
 
 // Set route
 var router = express.Router();
-router.get('/', function (req, resp) {
+router.get('/whoami', function (req, resp) {
     var software = req.headers['user-agent'];
     software = software.slice(software.indexOf('(') + 1, software.indexOf(')'))
     resp.json({
@@ -17,5 +17,5 @@ router.get('/', function (req, resp) {
     });
 });
 
-app.use('/', router)
+app.use('/', router);
 app.listen(port);
