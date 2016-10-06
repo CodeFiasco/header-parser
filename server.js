@@ -11,7 +11,7 @@ router.get('/', function (req, resp) {
     var software = req.headers['user-agent'];
     software = software.slice(software.indexOf('(') + 1, software.indexOf(')'))
     resp.json({
-        ipaddress: req.connection.remoteAddress,
+        ipaddress: req.ip,
         language: req.acceptsLanguages()[0],
         software: software
     });
